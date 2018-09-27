@@ -8,6 +8,15 @@
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
+
+
+                    @if ($errors->has('confirmation') > 0 )
+                        <div class="alert alert-danger" role="alert">
+                            {!! $errors->first('confirmation') !!}
+                        </div>
+                    @endif
+
+
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
